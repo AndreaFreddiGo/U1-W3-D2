@@ -81,8 +81,8 @@
     </footer>
     <script>
       /* ESERCIZIO 1
-               Scrivi una funzione per cambiare il titolo della pagina in qualcos'altro
-            */
+                     Scrivi una funzione per cambiare il titolo della pagina in qualcos'altro
+                  */
 
       const changeTitle = () => {
         const title = document.getElementsByTagName('h1')
@@ -92,8 +92,8 @@
       changeTitle()
 
       /* ESERCIZIO 2
-               Scrivi una funzione per aggiungere al titolo della pagina una classe "myHeading"
-            */
+                     Scrivi una funzione per aggiungere al titolo della pagina una classe "myHeading"
+                  */
 
       const addClassToTitle = () => {
         const title = document.getElementsByTagName('h1')
@@ -103,8 +103,8 @@
       addClassToTitle()
 
       /* ESERCIZIO 3
-               Scrivi una funzione che cambi il testo dei p figli di un div
-              */
+                     Scrivi una funzione che cambi il testo dei p figli di un div
+                    */
 
       const changePcontent = () => {
         const p = document.querySelectorAll('div p')
@@ -116,8 +116,8 @@
       changePcontent()
 
       /* ESERCIZIO 4
-               Scrivi una funzione che cambi la proprietà href di ogni link (tranne quello nel footer) con il valore https://www.google.com
-              */
+                     Scrivi una funzione che cambi la proprietà href di ogni link (tranne quello nel footer) con il valore https://www.google.com
+                    */
 
       const changeUrls = () => {
         const a = document.getElementsByTagName('a')
@@ -131,8 +131,8 @@
       changeUrls()
 
       /* ESERCIZIO 5
-               Scrivi una funzione che aggiunga un nuovo elemento lista alla seconda lista non ordinata
-            */
+                     Scrivi una funzione che aggiunga un nuovo elemento lista alla seconda lista non ordinata
+                  */
 
       const addToTheSecond = () => {
         const newLi = document.createElement('li')
@@ -144,8 +144,8 @@
       addToTheSecond()
 
       /* ESERCIZIO 6
-               Scrivi una funzione che aggiunga un paragrafo al primo div
-            */
+                     Scrivi una funzione che aggiunga un paragrafo al primo div
+                  */
 
       const addParagraph = () => {
         const newP = document.createElement('p')
@@ -157,8 +157,8 @@
       addParagraph()
 
       /* ESERCIZIO 7
-               Scrivi una funzione che faccia scomparire la prima lista non ordinata
-            */
+                     Scrivi una funzione che faccia scomparire la prima lista non ordinata
+                  */
 
       const hideFirstUl = () => {
         const firstUl = document.getElementById('firstList').remove()
@@ -167,8 +167,8 @@
       hideFirstUl()
 
       /* ESERCIZIO 8
-               Scrivi una funzione che renda verde il background di ogni lista non ordinata
-              */
+                     Scrivi una funzione che renda verde il background di ogni lista non ordinata
+                    */
 
       const paintItGreen = () => {
         const everyUl = document.getElementsByTagName('ul')
@@ -180,8 +180,8 @@
       paintItGreen()
 
       /* ESERCIZIO 9
-               Scrivi una funzione che rimuova l'ultima lettera dall'h1 ogni volta che l'utente lo clicca
-              */
+                     Scrivi una funzione che rimuova l'ultima lettera dall'h1 ogni volta che l'utente lo clicca
+                    */
 
       const makeItClickable = () => {
         const h1 = document.getElementsByTagName('h1')
@@ -193,8 +193,8 @@
       makeItClickable()
 
       /* ESERCIZIO 10
-               Crea una funzione che, al click sul footer, riveli l'URL del link interno come contenuto di un alert()
-              */
+                     Crea una funzione che, al click sul footer, riveli l'URL del link interno come contenuto di un alert()
+                    */
 
       const revealFooterLink = () => {
         const footer = document.getElementsByTagName('footer')
@@ -207,33 +207,100 @@
       revealFooterLink()
 
       /* ESERCIZIO 11
-               Crea una funzione che crei una tabella nell'elemento con id "tableArea".
-               La tabella avrà 5 elementi e questa struttura: immagine, nome prodotto, quantità, prezzo
-            */
+                     Crea una funzione che crei una tabella nell'elemento con id "tableArea".
+                     La tabella avrà 5 elementi e questa struttura: immagine, nome prodotto, quantità, prezzo
+                  */
 
-      const generateTable = function () {}
+      const generateTable = () => {
+        const containerTable = document.getElementById('tableArea')
+        const table = document.createElement('table')
+        table.innerHTML = `
+        <tr>
+          <th>immagine</th>
+          <th>nome prodotto</th>
+          <th>quantità</th>
+          <th>prezzo</th>
+        </tr>
+        <tr>
+          <td>immagine</td>
+          <td>nome prodotto</td>
+          <td>quantità</td>
+          <td>prezzo</td>
+        </tr>
+        <tr>
+          <td>immagine</td>
+          <td>nome prodotto</td>
+          <td>quantità</td>
+          <td>prezzo</td>
+        </tr>
+        <tr>
+          <td>immagine</td>
+          <td>nome prodotto</td>
+          <td>quantità</td>
+          <td>prezzo</td>
+        </tr>
+        <tr>
+          <td>immagine</td>
+          <td>nome prodotto</td>
+          <td>quantità</td>
+          <td>prezzo</td>
+        </tr>
+          `
+        containerTable.appendChild(table)
+      }
+
+      generateTable()
 
       /* ESERCIZIO 12
-               Crea una funzione che aggiunga una riga alla tabella precedentemente creata e fornisca i dati necessari come parametri
-            */
+                     Crea una funzione che aggiunga una riga alla tabella precedentemente creata e fornisca i dati necessari come parametri
+                  */
 
-      const addRow = function () {}
+      const addRow = function () {
+        const table = document.querySelector('table')
+        const newRow = document.createElement('tr')
+        const immagineTd = document.createElement('td')
+        immagineTd.innerText = 'immagine'
+        const nomeprodottoTd = document.createElement('td')
+        nomeprodottoTd.innerText = 'nome prodotto'
+        const quantitàTd = document.createElement('td')
+        quantitàTd.innerText = 'quantità'
+        const prezzoTd = document.createElement('td')
+        prezzoTd.innerText = 'prezzo'
+        newRow.appendChild(immagineTd)
+        newRow.appendChild(nomeprodottoTd)
+        newRow.appendChild(quantitàTd)
+        newRow.appendChild(prezzoTd)
+        table.appendChild(newRow)
+      }
+
+      addRow()
 
       /* ESERCIZIO 14
-              Crea una funzione che nasconda le immagini della tabella quando eseguita
-            */
+                    Crea una funzione che nasconda le immagini della tabella quando eseguita
+                  */
 
-      const hideAllImages = function () {}
+      const hideAllImages = function () {
+        const firstTd = document.getElementsByTagName('td')
+        for (let i = 0; i < firstTd.length; i++) {
+          if (firstTd[i].innerText === 'immagine') {
+            firstTd[i].innerText = ''
+          }
+        }
+      }
+
+      hideAllImages()
 
       /* EXTRA ESERCIZIO 15
-              Crea una funzione che cambi il colore del h2 con id "changeMyColor" con un colore random ad ogni click ricevuto
-            */
+                    Crea una funzione che cambi il colore del h2 con id "changeMyColor" con un colore random ad ogni click ricevuto
+                  */
 
       const changeColorWithRandom = function () {
         const coloredH2 = document.getElementById('changeMyColor')
         coloredH2.addEventListener('click', function () {
-          let randomColor =
-            'rgb(Math.floor(Math.random() * 256), Math.floor(Math.random() * 256), Math.floor(Math.random() * 256))'
+          let r = Math.floor(Math.random() * 256)
+          let g = Math.floor(Math.random() * 256)
+          let b = Math.floor(Math.random() * 256)
+          const randomColor = 'rgb(' + r + ', ' + g + ', ' + b + ')'
           coloredH2.style.color = randomColor
         })
       }
