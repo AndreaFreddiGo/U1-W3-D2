@@ -183,7 +183,7 @@
                Scrivi una funzione che rimuova l'ultima lettera dall'h1 ogni volta che l'utente lo clicca
               */
 
-      const makeItClickable = function () {
+      const makeItClickable = () => {
         const h1 = document.getElementsByTagName('h1')
         h1[0].addEventListener('click', function () {
           h1[0].innerText = h1[0].innerText.slice(0, -1)
@@ -196,7 +196,7 @@
                Crea una funzione che, al click sul footer, riveli l'URL del link interno come contenuto di un alert()
               */
 
-      const revealFooterLink = function () {
+      const revealFooterLink = () => {
         const footer = document.getElementsByTagName('footer')
         const footerHref = document.querySelector('footer h3 a')
         footer[0].addEventListener('click', function () {
@@ -229,7 +229,16 @@
               Crea una funzione che cambi il colore del h2 con id "changeMyColor" con un colore random ad ogni click ricevuto
             */
 
-      const changeColorWithRandom = function () {}
+      const changeColorWithRandom = function () {
+        const coloredH2 = document.getElementById('changeMyColor')
+        coloredH2.addEventListener('click', function () {
+          let randomColor =
+            'rgb(Math.floor(Math.random() * 256), Math.floor(Math.random() * 256), Math.floor(Math.random() * 256))'
+          coloredH2.style.color = randomColor
+        })
+      }
+
+      changeColorWithRandom()
     </script>
   </body>
 </html>
